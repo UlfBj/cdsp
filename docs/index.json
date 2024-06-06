@@ -1,27 +1,20 @@
 [
 {
-	"uri": "https://covesa.github.io/cdsp/overview/",
+	"uri": "https://covesa.github.io/cdsp/",
 	"title": "Playground overview",
 	"tags": [],
 	"description": "",
-	"content": "Introduction Learn the basics and benefits of using the playground\n"
+	"content": "Central Data Service Playground Overview The Central Data Service Playground (CDSP) serves as a neutral, open playground for data services both within and outside the vehicle in the context of data-centric architectures. It enables investigation into the internals of these services and how they can be combined. Furthermore, the playground provides a means to publish and collaborate on such work in the open.\nThe playground was first conceived by the COVESA Data Architecture team to meet their needs. They also recognized that there were the same needs in the wider community inside and outside COVESA. For example, to demonstrate how VSS data can be used with its eco-system for newcomers.\nThe chapters below digs deeper into the ideas behind the playgrond:\nLogical concept Implementation concept COVESA eco-system and beyond Playground lego pieces Below is an unprioritized list of the lego pieces available at the playground. The hope is that these pieces will not only be played with separately, but that playground projects will be started to build larger structures by combining them.\nVISSR Apache IoTDB Knowledge connector uServices mocker Playground examples Learn how to use the playground by stepping through examples.\nOverview\n"
 },
 {
-	"uri": "https://covesa.github.io/cdsp/overview/cdsp-overview/",
-	"title": "Playground overview",
+	"uri": "https://covesa.github.io/cdsp/lego-pieces/",
+	"title": "Playground lego pieces",
 	"tags": [],
 	"description": "",
-	"content": "The Central Data Service Playground (CDSP) serves as a neutral, open playground for data services both within and outside the vehicle in the context of data-centric architectures. It enables investigation into the internals of these services and how they can be combined. Furthermore, the playground provides a means to publish and collaborate on such work in the open.\nThe playground was first conceived by the COVESA Data Architecture team to meet their needs. They also recognized that there were the same needs in the wider community inside and outside COVESA. For example, to demonstrate how VSS data can be used with its eco-system for newcomers.\nNext steps:\nLogical concept Implementation concept COVESA eco-system and beyond "
+	"content": "Introduction This section contains the currently available playground lego pieces.\n"
 },
 {
-	"uri": "https://covesa.github.io/cdsp/manuals/",
-	"title": "Manuals",
-	"tags": [],
-	"description": "",
-	"content": "Introduction This section contains user guides and reference manuals for the playground\n"
-},
-{
-	"uri": "https://covesa.github.io/cdsp/overview/cdsp-logical-concept/",
+	"uri": "https://covesa.github.io/cdsp/cdsp-logical-concept/",
 	"title": "Playground logical concept",
 	"tags": [],
 	"description": "",
@@ -35,21 +28,21 @@
 	"content": "Learn how to use the playground by stepping through examples.\nNote: There is not a separate section for the VSS data model because the vast majority of the examples will be making use of it.\nGetting started Docker sanity test | Hello-world\nData Layer, Processing and Analysis Data Reduction | Data Quality | Events | Data Streams etc.\nTip: well you wait for some examples consider how you could use the IoTDB data processing functions in the UDF library.\nKnowledge Layer, Reasoning and Data Models Data Layer Connector | A | B | C etc.\nFeeders RemotiveLabs | WAII VISS | etc.\nCOVESA Touchpoints A | B | C\nCOVESA Technologies vsome/ip (SOME/IP) | uServices | Vehicle API | VISS etc.\nDatabases Apache IoTDB | MongoDB Realm | Redis/SQLite/memcache etc.\nFrameworks / Protocols vsome/ip (SOME/IP) | VISS | uServices/uProtocol/Capabilities | Vehicle API | MQTT | Kafka | Apache Zeppelin etc.\nBig data Hadoop | Flink | Spark | Cloud DB | Nifi etc.\nOther examples A | B | C\n"
 },
 {
-	"uri": "https://covesa.github.io/cdsp/overview/cdsp-implementation-concept/",
+	"uri": "https://covesa.github.io/cdsp/cdsp-implementation-concept/",
 	"title": "Playground implementation",
 	"tags": [],
 	"description": "",
 	"content": "The prior section describing the logical concept should be read to understand the concepts to be implemented.\nAs outlined in the logical description, as a starting point the Service is realized as a basic building block combining VISS Data Server with highly functional (VSS) Data Store.\nVISS data server The reference implementation for the COVESA VISS specification is developed in the VISSR project. The playground has included VISSR to provide its northbound VISS support.\nAlongside the VISS server the VISSR project provides clients, feeders and tooling. Further details can be found in the upstream VISSR documentation site.\nDuring initial development of the playground the upstream VISSR project supported using SQLite, Redis or memcached databases as its data store.\nHighly functional (VSS) data store As explained earlier in the logical concept the playground includes the use of highly functional VSS data stores to expand the available data processing possibilities. Two archetypes were considered:\nDatabase server with timeseries capabilities Application database The OSS Apache IoTDB project was selected for the database server archetype for reasons explained in the section below.\nTo enable access to VSS data stored in IoTDB using the VISS protocol the playground project extended VISSR to support IoTDB as one of its supported data store backends. That support was upstreamed and merged.\nFor the application database archetype MongoDB Realm was selected. Support for it is currently a work in progress as part of the playground project backlog.\nApache IoTDB The Apache IoTDB project page describes IoTDB as:\n\u0026ldquo;Apache IoTDB (Database for Internet of Things) is an IoT native database with high performance for data management and analysis, deployable on the edge and the cloud. Due to its light-weight architecture, high performance and rich feature set together with its deep integration with Apache Hadoop, Spark and Flink, Apache IoTDB can meet the requirements of massive data storage, high-speed data ingestion and complex data analysis in the IoT industrial fields.\u0026rdquo;\nThe diagram below summarizes some of the features that make it an attractive addition to the playground.\nSummary of Apache IoTDB features The focus on timeseries IoT data delivering high throughput, with low latency are a good fit with the automotive domain. The availability of a single node (Edge) server build is critical for in-vehicle investigations and is supported by the existence of a cluster build for the cloud if needed.\nIts support for client server, event and streaming data architectures allows for flexible operation using a single solution.\nIt also has very wide API support that greatly enhances the pluggability of the data store into other components, whilst supporting the playground project goal of loose coupling.\nSimilarly the wide range of integrations into other tools and frameworks, particularly the Apache big data stack, simplifies the integration of VSS and associated data into data-centric workflows.\nIoTDB has a wide range of built-in timeseries data processing and analysis functions covering topics such as data quality, profiling, repair, anomaly detection and series discovery. For example, in-vehicle data analysis can be performed to derive some information or knowledge and then data reduced for further processing in the cloud.\nAs well as Native APIs IoTDB also supports a SQL-like query language. This supports the describing of work in logical terms that affords some portability to other solutions.\nDeployment The project is currently targeting two deployment scenarios:\nEasy to develop: make it easy to build, modify and trial by providing a containerized instance running on a host using Docker containers. Closer to production: the same base code should be deployable to systems closer to production, including on automotive hardware (or its simulation), e.g. Yocto, container orchestration, Service-orientated architecture (SOA) etc. Docker containers are chosen to facilitate the rapid integration and/or swapping of technology options. Be it internals of the playground itself, or connection to other components. For example, users can easily integrate the playground into their own docker compose containing other components.\nStatus The containerized docker deployment is available. Deployment on automotive hardware is currently not but is part of the project backlog.\nHost based Docker The playground provides docker compose files to deploy the playground using docker images. The deployment contains three main services, for Apache IoTDB, VISSR and Redis.\nPlease see the playground docker readme.md in the source tree for details.\nThe service definitions are based on the upstream compose files from the IoTDB and VISSR projects.\nAutomotive hardware The project will provide information as hardware deployment progresses.\n"
 },
 {
-	"uri": "https://covesa.github.io/cdsp/overview/covesa-and-beyond/",
+	"uri": "https://covesa.github.io/cdsp/covesa-and-beyond/",
 	"title": "Combining with wider eco-system",
 	"tags": [],
 	"description": "",
 	"content": "\u0026lt;TBA: This page will put the playground \u0026rsquo;lego piece\u0026rsquo; in context with the wider COVESA eco-system and beyond, e.g. connection to CVI/Capabilities/Vehicle API gateway southbound\u0026gt;\n"
 },
 {
-	"uri": "https://covesa.github.io/cdsp/manuals/apache-iotdb/",
+	"uri": "https://covesa.github.io/cdsp/lego-pieces/apache-iotdb/",
 	"title": "Apache IoTDB",
 	"tags": [],
 	"description": "",
@@ -63,11 +56,11 @@
 	"content": ""
 },
 {
-	"uri": "https://covesa.github.io/cdsp/",
-	"title": "Central Data Service Playground",
+	"uri": "https://covesa.github.io/cdsp/lego-pieces/knowledge-connector/",
+	"title": "Knowledge Connector",
 	"tags": [],
 	"description": "",
-	"content": "Central Data Service Playground Overview Learn the basics and benefits of using the playground\nOverview\nBrowse by section Manuals This section contains user guides and reference manuals for the playground\nOverview | Apache IoTDB | VISSR | Integration guides | etc.\nExamples Learn how to use the playground by stepping through examples.\nOverview\n"
+	"content": "Introduction "
 },
 {
 	"uri": "https://covesa.github.io/cdsp/tags/",
@@ -77,7 +70,14 @@
 	"content": ""
 },
 {
-	"uri": "https://covesa.github.io/cdsp/manuals/vissr-viss/",
+	"uri": "https://covesa.github.io/cdsp/lego-pieces/uservices-mocker/",
+	"title": "uServices Mocker",
+	"tags": [],
+	"description": "",
+	"content": "Introduction "
+},
+{
+	"uri": "https://covesa.github.io/cdsp/lego-pieces/vissr-viss/",
 	"title": "VISSR (VISS data server)",
 	"tags": [],
 	"description": "",
