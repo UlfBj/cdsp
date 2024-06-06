@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.0">
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/hierarchical_information_model/images/fav.png" type="image/x-icon" />
+
+    <title>Central Data Service Playground :: Central Data Service Playground</title>
+
+    
+    <link href="/cdsp/css/nucleus.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/fontawesome-all.min.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/hybrid.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/featherlight.min.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/perfect-scrollbar.min.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/auto-complete.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/atom-one-dark-reasonable.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/theme.css?1717665120" rel="stylesheet">
+    <link href="/cdsp/css/hugo-theme.css?1717665120" rel="stylesheet">
+    
+    <link href="/cdsp/css/theme-blue.css?1717665120" rel="stylesheet">
+    
+    
+
+    <script src="/cdsp/js/jquery-3.3.1.min.js?1717665120"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/cdsp/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://covesa.github.io/cdsp/">
+  <img src="/cdsp/images/cdsp.png">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/cdsp/js/lunr.min.js?1717665120"></script>
+<script type="text/javascript" src="/cdsp/js/auto-complete.js?1717665120"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/covesa.github.io\/cdsp\/";
+    
+</script>
+<script type="text/javascript" src="/cdsp/js/search.js?1717665120"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/cdsp/overview/" title="Playground overview" class="dd-item
+        
+        
+        
+        ">
+      <a href="/cdsp/overview/">
+          Playground overview
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/overview/cdsp-overview/" title="Playground overview" class="dd-item ">
+        <a href="/cdsp/overview/cdsp-overview/">
+        Playground overview
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/overview/cdsp-logical-concept/" title="Playground logical concept" class="dd-item ">
+        <a href="/cdsp/overview/cdsp-logical-concept/">
+        Playground logical concept
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/overview/cdsp-implementation-concept/" title="Playground implementation" class="dd-item ">
+        <a href="/cdsp/overview/cdsp-implementation-concept/">
+        Playground implementation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/overview/covesa-and-beyond/" title="Combining with wider eco-system" class="dd-item ">
+        <a href="/cdsp/overview/covesa-and-beyond/">
+        Combining with wider eco-system
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/cdsp/manuals/" title="Manuals" class="dd-item
+        
+        
+        
+        ">
+      <a href="/cdsp/manuals/">
+          Manuals
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/manuals/apache-iotdb/" title="Apache IoTDB" class="dd-item ">
+        <a href="/cdsp/manuals/apache-iotdb/">
+        Apache IoTDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cdsp/manuals/vissr-viss/" title="VISSR (VISS data server)" class="dd-item ">
+        <a href="/cdsp/manuals/vissr-viss/">
+        VISSR (VISS data server)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/cdsp/examples/" title="Playground examples" class="dd-item
+        
+        
+        
+        ">
+      <a href="/cdsp/examples/">
+          Playground examples
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/covesa/cdsp"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<h1 id="central-data-service-playground">Central Data Service Playground</h1>
+<h2 id="overview">Overview</h2>
+<p>Learn the basics and benefits of using the playground</p>
+<p><a href="/cdsp/overview/cdsp-overview/" title="Playground overview">Overview</a></p>
+<h2 id="browse-by-section">Browse by section</h2>
+<h3 id="manuals">Manuals</h3>
+<p>This section contains user guides and reference manuals for the playground</p>
+<p><a href="/cdsp/manuals/" title="Manuals overview">Overview</a> | <a href="/cdsp/manuals/apache-iotdb/" title="Apache IoTDB Guide">Apache IoTDB</a> | <a href="/cdsp/manuals/vissr-viss/" title="VISSR (VISS data server) Guide">VISSR</a> | Integration guides | etc.</p>
+<h3 id="examples">Examples</h3>
+<p>Learn how to use the playground by stepping through examples.</p>
+<p><a href="/cdsp/examples/" title="Examples overview">Overview</a></p>
+	
+  
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/cdsp/overview/" title="Playground overview" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/cdsp/js/clipboard.min.js?1717665120"></script>
+    <script src="/cdsp/js/perfect-scrollbar.min.js?1717665120"></script>
+    <script src="/cdsp/js/perfect-scrollbar.jquery.min.js?1717665120"></script>
+    <script src="/cdsp/js/jquery.sticky.js?1717665120"></script>
+    <script src="/cdsp/js/featherlight.min.js?1717665120"></script>
+    <script src="/cdsp/js/highlight.pack.js?1717665120"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/cdsp/js/modernizr.custom-3.6.0.js?1717665120"></script>
+    <script src="/cdsp/js/learn.js?1717665120"></script>
+    <script src="/cdsp/js/hugo-learn.js?1717665120"></script>
+    
+        
+            <script src="/cdsp/mermaid/mermaid.js?1717665120"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
